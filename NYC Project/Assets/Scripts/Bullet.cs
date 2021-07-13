@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
@@ -9,13 +9,15 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public Rigidbody2D rb;
 
-    public TextMeshProUGUI text;
+    private static int score = 0;
+    public Text scoreText;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb.velocity = transform.up * speed;
+        scoreText = GameObject.FindGameObjectWithTag("Counter").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -28,6 +30,8 @@ public class Bullet : MonoBehaviour
         if (col.gameObject.tag == "Bird")
         {
             Destroy(col.gameObject);
+            score += 1;
+            scoreText.text = score + "";
         }
     }
 }

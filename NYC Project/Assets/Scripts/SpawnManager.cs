@@ -15,7 +15,7 @@ public class SpawnManager : MonoBehaviour
     }
     public void SpawnNewCollectible()
     {
-        float randonXPos = Random.Range(-8f, 7.5f);
+        float randonXPos = Random.Range(-8f, 5.5f);
         float randonYPos = Random.Range(1.25f, 4.15f);
         Vector2 spawnPos = new Vector2(randonXPos, randonYPos);
         GameObject newCollectible = Instantiate(collectiblePrefab, spawnPos, Quaternion.identity);

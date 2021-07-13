@@ -8,7 +8,7 @@ public class BallMovement : MonoBehaviour
 
 
     Rigidbody2D playerRB;
-    public float playerMovementSpeed = 100f;
+    public float playerMovementSpeed = 200f;
     public float playerJumpHeight = 3f;
 
     public Animator animator;

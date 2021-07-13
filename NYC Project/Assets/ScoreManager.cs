@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using System;
+using UnityEngine.UI;
 
-
-public class BirdHit : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
+    private static int score;
+    public Text scoreText;
 
-    public TextMeshProUGUI scoreText;
+    public void addScore()
+    {
+        score += 1;
+        scoreText.text = score + "";
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +26,4 @@ public class BirdHit : MonoBehaviour
     {
 
     }
-
-
-
 }
